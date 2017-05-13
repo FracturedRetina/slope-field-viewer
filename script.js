@@ -33,8 +33,8 @@ function drawAxes() {
 }
 
 function drawField() {
-	for (var y = yMin; y < yMax; y++) {
-		for (var x = xMin; x < xMax; x++) {
+	for (var y = yMin - 1; y <= yMax; y++) {
+		for (var x = xMin - 1; x <= xMax; x++) {
 			var scope = {
 				"x": x,
 				"y": y
