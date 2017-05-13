@@ -7,19 +7,17 @@ var c = document.getElementById("graph");
 var ctx = c.getContext("2d");
 
 var eq = "y/x";
-var LEN = 10;
+var LEN = 7;
 
+drawAxes();
+drawField();
 
-document.getElementsByTagName("input")[0].addEventListener('change', function() {
-	eq = this.value;
+$('input').change(function(e) {
 	ctx.clearRect(0, 0, c.width, c.height);
+	eq = $(this).val();
 	drawAxes();
 	drawField();
 });
-
-
-drawAxes();
-drawGrid();
 
 function drawAxes() {
 	//x-axis
@@ -43,12 +41,12 @@ function drawField() {
 			};
 			ctx.beginPath();
 				ctx.moveTo(
-					xToDrawX(x) - LEN / 2,
-					yToDrawY(y) - LEN / 2 * math.eval(eq, scope)
+					xToDrawX(x) - LEN * Math.cos(Math.atan(math.eval(eq, scope))),
+					yToDrawY(y) - LEN * Math.sin(Math.atan(math.eval(eq, scope)))
 				);
 				ctx.lineTo(
-					xToDrawX(x) + LEN / 2,
-					yToDrawY(y) + LEN / 2 * math.eval(eq, scope)
+					xToDrawX(x) + LEN * Math.cos(Math.atan(math.eval(eq, scope))),
+					yToDrawY(y) + LEN * Math.sin(Math.atan(math.eval(eq, scope)))
 				);
 			ctx.stroke();
 		}
