@@ -37,7 +37,7 @@ function drawField() {
 		for (var x = xMin - 1; x <= xMax; x++) {
 			var scope = {
 				"x": x,
-				"y": y
+				"y": -y
 			};
 			ctx.beginPath();
 				ctx.moveTo(
