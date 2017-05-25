@@ -41,12 +41,12 @@ function drawField() {
 			};
 			ctx.beginPath();
 				ctx.moveTo(
-					xToDrawX(x) - LEN * Math.cos(-Math.atan(math.eval(eq, scope))),
-					yToDrawY(y) - LEN * Math.sin(-Math.atan(math.eval(eq, scope)))
+					xToDrawX(x) - LEN * Math.cos(Math.atan(math.eval(eq, scope))),
+					yToDrawY(y) - LEN * Math.sin(Math.atan(math.eval(eq, scope)))
 				);
 				ctx.lineTo(
-					xToDrawX(x) + LEN * Math.cos(-Math.atan(math.eval(eq, scope))),
-					yToDrawY(y) + LEN * Math.sin(-Math.atan(math.eval(eq, scope)))
+					xToDrawX(x) + LEN * Math.cos(Math.atan(math.eval(eq, scope))),
+					yToDrawY(y) + LEN * Math.sin(Math.atan(math.eval(eq, scope)))
 				);
 			ctx.stroke();
 		}
