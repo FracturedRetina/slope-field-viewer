@@ -36,17 +36,17 @@ function drawField() {
 	for (var y = yMin - 1; y <= yMax; y++) {
 		for (var x = xMin - 1; x <= xMax; x++) {
 			var scope = {
-				"x": x,
-				"y": -y
+				"x": -x,
+				"y": y
 			};
 			ctx.beginPath();
 				ctx.moveTo(
-					xToDrawX(x) - LEN * Math.cos(Math.atan(math.eval(eq, scope))),
-					yToDrawY(y) - LEN * Math.sin(Math.atan(math.eval(eq, scope)))
+					xToDrawX(x) - LEN * Math.cos(-Math.atan(math.eval(eq, scope))),
+					yToDrawY(y) - LEN * Math.sin(-Math.atan(math.eval(eq, scope)))
 				);
 				ctx.lineTo(
-					xToDrawX(x) + LEN * Math.cos(Math.atan(math.eval(eq, scope))),
-					yToDrawY(y) + LEN * Math.sin(Math.atan(math.eval(eq, scope)))
+					xToDrawX(x) + LEN * Math.cos(-Math.atan(math.eval(eq, scope))),
+					yToDrawY(y) + LEN * Math.sin(-Math.atan(math.eval(eq, scope)))
 				);
 			ctx.stroke();
 		}
